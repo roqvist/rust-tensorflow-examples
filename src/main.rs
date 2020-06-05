@@ -274,8 +274,10 @@ fn main() -> Result<(), BoxedError> {
     // The following section uses arg_max to find the correct index
     // in our output array. Remember our output is an array with ten floats:
     // [0.0, 0.0, .... 0.0]
-    // By using argmax with 1 for the output and target labels, we can get
-    // the index of the number.
+    // By using argmax with 1 for the output and target labels, we can compare
+    // the output with the training label to see if we got the right index (number).
+    // The resulting correct predictions are then cast to a float
+    // as accuracy.
     let const_1 = ops::constant(1, &mut training_scope.with_op_name("const_0"))?;
     let argmax_network_output_2 = ops::arg_max(
         network_output_2.clone().into(),
