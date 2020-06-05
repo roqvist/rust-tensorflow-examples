@@ -1,0 +1,15 @@
+[package]
+name = "rust-tenforflow-mnist-neural-network-example"
+version = "1.0.0"
+authors = ["Robert Blomqvist <roqvist@pm.me>"]
+edition = "2018"
+license = "MIT"
+keywords = ["tensorflow", "machine learning", "neural network", "mnist"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+csv = "1.1.3"
+tensorflow = { version = "0.15.0", features = ["experimental_training"] }
+serde = { version = "1", features = ["derive"] }
+rand = "0.7.3"
